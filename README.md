@@ -1,2 +1,2 @@
 # leetcode-notes
-DSA notes and approaches for interview prep
+DSA notes and approaches for interview preparation 
