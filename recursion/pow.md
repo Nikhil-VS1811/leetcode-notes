@@ -7,7 +7,7 @@
     4. IN recursive FUNC
         1. get the base condition like n==0 and n==1
         2. if n is even then return power(x*x,n/2)
-        3. if n is odd then return x* power(x,n-1)
+        3. if n is odd then return x* power(x,n-1)   
 
 ## Complexity
 - Time: O(log n)
