@@ -6,9 +6,9 @@
         {
             if(s[cookieInd]>=g[studInd])
             {
-                studInd++;
+                studInd++;   
             }
-            cookieInd++;
+            cookieIndex++;
         }
 
 ## Complexity
