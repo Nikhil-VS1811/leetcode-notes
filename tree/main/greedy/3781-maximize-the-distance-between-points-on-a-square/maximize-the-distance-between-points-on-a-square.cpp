@@ -24,8 +24,7 @@ public:
     return l;
     }
     private:
-  // Returns true if we can select `k` points such that the minimum Manhattan
-  // distance between any two consecutive chosen points is at least `m`.
+    
   bool isValidDistance(const vector<pair<int, int>>& ordered, int k, int d) {
     deque<Sequence> dq{{ordered[0].first, ordered[0].second, ordered[0].first,
                         ordered[0].second, 1}};
@@ -53,8 +52,6 @@ public:
     return maxLength >= k;
   }
 
-  // Returns the ordered points on the perimeter of a square of side length
-  // `side`, starting from left, top, right, and bottom boundaries.
   vector<pair<int, int>> getOrderedPoints(int side,
                                           vector<vector<int>>& points) {
     vector<pair<int, int>> left;
