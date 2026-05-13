@@ -1,7 +1,7 @@
 # Combination Sum (LeetCode 39)
 
 ## Approach
-    1. assign the n to temp
+    1. assign the n to temp variabel
     2. solve the negative n
     3. go to power recursive func
     4. IN recursive FUNC
