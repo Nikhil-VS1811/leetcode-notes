@@ -1,46 +1,47 @@
 class Solution {
 public:
     int leastInterval(vector<char>& tasks, int n) {
-        unordered_map<char,int>freq;
-        for(char task:tasks)
-        {
-            freq[task]++;
-        }
+       unordered_map<char,int>freq;
+       for(char task:tasks)
+       {
+        freq[task]++;
+       }
 
-        priority_queue<int>maxHeap;
-        for(auto &entry:freq)
-        {
-            maxHeap.push(entry.second);
-        }
+       priority_queue<int>pq;
+       for(auto &entry:freq)
+       {
+        pq.push(entry.second);
+       }
+
         int time=0;
-        while(!maxHeap.empty())
+        int cycle=n+1;
+
+       while(!pq.empty())
+       {
+        vector<int>temp;
+        int i=0;
+
+        while(i<cycle && !pq.empty())
         {
-            vector<int> temp;
-            int cycle=n+1;
-            int i=0;
-            while(i<cycle && !maxHeap.empty())
+            int cnt=pq.top();
+            pq.pop();
+            cnt--;
+
+            if(cnt>0)
             {
-                int cnt=maxHeap.top();
-                maxHeap.pop();
-
-                cnt--;
-
-                if(cnt>0)
-                {
-                    temp.push_back(cnt);
-                }
-                time++;
-                i++;
+                temp.push_back(cnt);
             }
-            for(int val:temp)
-            {
-                maxHeap.push(val);
-            }
-
-            if(maxHeap.empty()) break;
-
-            time+=(cycle-i);
+            time++;
+            i++;
         }
-        return time;
+        for(int val:temp)
+        {
+            pq.push(val);
+        }
+        if(pq.empty()) break;
+
+        time+=(cycle-i);
+       }
+       return time;
     }
 };
