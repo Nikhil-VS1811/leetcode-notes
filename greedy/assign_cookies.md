@@ -1,7 +1,7 @@
 # Assign Cookies (LeetCode 455)
 
 ## Approach
-1) sort 
+1) sort it
 2) while(studInd<g.size() && cookieInd<s.size())
         {
             if(s[cookieInd]>=g[studInd])
