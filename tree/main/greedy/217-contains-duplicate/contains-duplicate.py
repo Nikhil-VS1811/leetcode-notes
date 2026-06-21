@@ -5,6 +5,5 @@ class Solution:
         for i in range(n):
             mySet.add(nums[i])
         m=len(mySet)
-        if n==m:
-            return False
-        return True
+        return n!=m
+            
